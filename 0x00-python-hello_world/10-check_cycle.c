@@ -11,10 +11,15 @@ int check_cycle(listint_t *list)
 	listint_t *previousNode;
 	listint_t *nextNode;
 
+	if (list == NULL)
+	{
+		return (0);
+	}
+
 	previousNode = list;
 	nextNode = list;
 
-	while (previousNode && nextNode && nextNode->next->next)
+	while (previousNode && nextNode && nextNode->next)
 	{
 		previousNode = previousNode->next;
 		nextNode = nextNode->next->next;
@@ -24,5 +29,6 @@ int check_cycle(listint_t *list)
 			return (1);
 		}
 	}
+
 	return (0);
 }
