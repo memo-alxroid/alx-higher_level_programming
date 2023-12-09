@@ -10,7 +10,8 @@ def roman_to_int(roman_string):
                               "XC": 90, "CD": 400, "CM": 900}
     i = 0
     while i < len(roman_string):
-        if i + 1 < len(roman_string) and roman_string[i:i + 2] in roman_dict_subtractive:
+        if i + 1 < len(roman_string) and roman_string[i:i + 2]
+        in roman_dict_subtractive:
             result += roman_dict_subtractive[roman_string[i:i + 2]]
             i += 2  # Increment by 2 since we've processed two characters
         else:
