@@ -36,7 +36,6 @@ int is_palindrome(listint_t **head)
 	{
 		if (dataArr[i] != dataArr[(listLength - i) - 1])
 		{
-			printf("%lu\n", listLength);
 			return (0);
 		}
 	}
