@@ -1,6 +1,27 @@
 #include "lists.h"
 
-size_t dlistint_len(const listint_t *h);
+/**
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
+ */
+void reverse_listint(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
+
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	*head = prev;
+}
 
 /**
  * is_palindrome - checks if a linked list is a palindrome
@@ -8,63 +29,44 @@ size_t dlistint_len(const listint_t *h);
  *
  * Return: 1 if it is, 0 if not
  */
-
 int is_palindrome(listint_t **head)
 {
-	int *dataArr;
-	size_t listLength;
-	size_t i;
-	listint_t *headPtr;
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
 	if (*head == NULL || (*head)->next == NULL)
-	{
 		return (1);
-	}
-	listLength = dlistint_len(*head);
-	dataArr = malloc(sizeof(int) * listLength);
 
-	i = 0;
-	headPtr = *head;
-	while (headPtr != NULL)
+	while (1)
 	{
-		dataArr[i] = headPtr->n;
-		headPtr = headPtr->next;
-		i++;
-	}
-
-	for (i = 0; i < listLength / 2; i++)
-	{
-		if (dataArr[i] != dataArr[(listLength - i) - 1])
+		fast = fast->next->next;
+		if (!fast)
 		{
-			free(dataArr);
-			return (0);
+			dup = slow->next;
+			break;
 		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
-	free(dataArr);
-	return (1);
-}
 
-/**
- * dlistint_len - returns the number of elements in
- * a double linked list
- *
- * @h: head of the list
- * Return: the number of nodes
- */
+	reverse_listint(&dup);
 
-size_t dlistint_len(const listint_t *h)
-{
-	size_t numberOfElements = 0;
-
-	if (h == NULL)
+	while (dup && temp)
 	{
-		return (numberOfElements);
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
+			return (0);
 	}
 
-	while (h != NULL)
-	{
-		numberOfElements++;
-		h = h->next;
-	}
-	return (numberOfElements);
+	if (!dup)
+		return (1);
+
+	return (0);
 }
