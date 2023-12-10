@@ -36,12 +36,9 @@ int is_palindrome(listint_t **head)
 	{
 		if (dataArr[i] != dataArr[(listLength - i) - 1])
 		{
-			free(dataArr[i]);
-			free(dataArr[(listLength - i) - 1]);
+			free(dataArr);
 			return (0);
 		}
-		free(dataArr[i]);
-		free(dataArr[(listLength - i) - 1]);
 	}
 	free(dataArr);
 	return (1);
