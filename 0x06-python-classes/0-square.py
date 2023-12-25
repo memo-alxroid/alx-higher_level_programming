@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Defines a Empty Square."""
+"""Defines an Empty Square."""
 
 
 class Square:
