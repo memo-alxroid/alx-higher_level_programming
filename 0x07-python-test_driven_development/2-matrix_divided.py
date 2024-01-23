@@ -25,7 +25,7 @@ def matrix_divided(matrix, div):
                 raise TypeError(error_msgs[2])
             if div == 0:
                 raise ZeroDivisionError(error_msgs[3])
-            if type(element) is not int and type(element)is not float:
+            if type(element) is not int and type(element) is not float:
                 raise TypeError(error_msgs[0])
             quotients_list.append(round(element / div, 2))
         new_matrix.append(quotients_list)
