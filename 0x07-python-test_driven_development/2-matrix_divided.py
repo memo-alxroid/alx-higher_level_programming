@@ -17,6 +17,7 @@ def matrix_divided(matrix, div):
     for i in range(list_length):
         quotients_list = []
         for j in range(len(matrix[i])):
+            element = matrix[i][j]
             if i != list_length - 1:
                 if len(matrix[i]) != len(matrix[i + 1]):
                     raise TypeError(error_msgs[1])
@@ -24,8 +25,8 @@ def matrix_divided(matrix, div):
                 raise TypeError(error_msgs[2])
             if div == 0:
                 raise ZeroDivisionError(error_msgs[3])
-            if type(matrix[i][j]) is not int and type(matrix[i][j]) is not float:
+            if type(element) is not int and type(element)is not float:
                 raise TypeError(error_msgs[0])
-            quotients_list.append(round(matrix[i][j] / div, 2))
+            quotients_list.append(round(element / div, 2))
         new_matrix.append(quotients_list)
     return new_matrix
