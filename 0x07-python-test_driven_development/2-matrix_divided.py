@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A module that contains matrix_divided matrix"""
 
+
 def matrix_divided(matrix, div):
     """Divides all elements of a matrix.
     Args: matrix (list of lists): matrix to be divided.
