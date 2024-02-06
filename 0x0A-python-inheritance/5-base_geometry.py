@@ -3,6 +3,5 @@
 
 
 class BaseGeometry:
-  """BaseGeometry Class to be filled"""
-
-  pass
+    """BaseGeometry Class to be filled"""
+    pass
