@@ -12,10 +12,6 @@ class Square(Rectangle):
         self.__size = self.integer_validator("size", size)
         super().__init__(self.__size, self.__size)
 
-    def __str__(self):
-        """Method that returns the string representation of the instance"""
-        return "[Square] " + str(self.__size) + "/" + str(self.__size)
-
     def area(self):
         """Method that returns the area of the square"""
         return self.__size ** 2
