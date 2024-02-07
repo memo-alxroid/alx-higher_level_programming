@@ -23,3 +23,7 @@ class Rectangle(BaseGeometry):
         """Method that initializes the instance"""
         self.__width = self.integer_validator("width", width)
         self.__height = self.integer_validator("height", height)
+    
+    def area(self):
+        """Method that returns the area of the rectangle"""
+        return self.__width * self.__height
