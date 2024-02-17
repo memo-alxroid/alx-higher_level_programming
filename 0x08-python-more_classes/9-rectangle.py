@@ -58,7 +58,8 @@ class Rectangle:
         """The __str__ method of the class."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return ((Rectangle.print_symbol * self.__width + "\n") * self.__height)[:-1]
+        return ((Rectangle.print_symbol * self.__width + "\n")
+                * self.__height)[:-1]
 
     def __repr__(self):
         """The __repr__ method of the class."""
