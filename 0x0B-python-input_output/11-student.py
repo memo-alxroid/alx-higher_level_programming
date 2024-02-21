@@ -22,7 +22,7 @@ class Student:
                 if key in attrs:
                     new_dict[key] = value
             return new_dict
-    
+
     def reload_from_json(self, json):
         """ Method that replaces all attributes of the Student instance """
         for key, value in json.items():
