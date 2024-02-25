@@ -2,6 +2,7 @@
 
 """Base class for all the models"""
 
+
 class Base:
     """Base class for all the classes"""
     
