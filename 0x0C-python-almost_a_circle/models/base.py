@@ -5,9 +5,9 @@
 
 class Base:
     """Base class for all the classes"""
-    
+
     __nb_objects = 0
-    
+
     def __init__(self, id=None):
         """Initialize the class"""
         if id is not None:
